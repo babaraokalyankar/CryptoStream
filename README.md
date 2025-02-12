@@ -19,14 +19,19 @@ This project demonstrates an **End-To-End Data Engineering Pipeline** for proces
 
 ## Dataset
 Real-time cryptocurrency price data from multiple exchanges, containing:
-- Timestamps
-- Cryptocurrency symbols (BTC, ETH, etc.)
-- Price in USD
-- 24h Volume
-- Market Cap
-- Price change percentages
+- SNo
+- Name
+- Symbol
+- Date
+- High
+- Low
+- Open
+- Close
+- Volume
+- Marketcap
 
-Sample Dataset: [CryptoCompare Historical Data](https://www.cryptocompare.com/api/)
+
+Sample Dataset: [Cryptocurrency Historical Prices](https://www.kaggle.com/datasets/sudalairajkumar/cryptocurrencypricehistory)
 
 ## Architecture Overview
 
