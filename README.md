@@ -32,19 +32,3 @@ Real-time cryptocurrency price data from multiple exchanges, containing:
 
 
 Sample Dataset: [Cryptocurrency Historical Prices](https://www.kaggle.com/datasets/sudalairajkumar/cryptocurrencypricehistory)
-
-## Architecture Overview
-
-```plaintext
-+-----------------+      +-------------+      +-----------+      +------------+
-| Crypto Exchanges|      | Kafka       |      | AWS        |      | Analytics  |
-| (REST API)      +----->+ Producer    +----->+ S3 Data    +----->+ with       |
-| CoinGecko/      |      | (EC2)       |      | Lake       |      | Athena/GLUE|
-| Binance/etc.    |      |             |      |            |      |            |
-+-----------------+      +------+------+      +-----+------+      +------------+
-                                |                   |
-                          +-----v------+     +------v-----+
-                          | Kafka      |     | Data       |
-                          | Consumer   |     | Cataloging |
-                          | (EC2)      |     | (Glue)     |
-                          +------------+     +------------+
