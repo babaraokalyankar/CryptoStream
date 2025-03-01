@@ -3,9 +3,6 @@
 ## Introduction
 This project demonstrates an **End-To-End Data Engineering Pipeline** for processing real-time cryptocurrency market data using **Apache Kafka**, **AWS Cloud Services**, and modern data tools. The pipeline ingests live cryptocurrency prices, processes streams, stores data in a data lake, and enables SQL analytics.
 
-![Project Architecture](https://via.placeholder.com/800x400.png?text=Cryptocurrency+Kafka+Data+Pipeline+Architecture)  
-*Diagram 1: High-Level Architecture*
-
 ## Technology Stack
 - **Programming Language**: Python 3.8+
 - **Stream Processing**: Apache Kafka
