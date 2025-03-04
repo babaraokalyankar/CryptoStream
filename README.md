@@ -41,4 +41,4 @@ Sample Dataset: [Cryptocurrency Historical Prices](https://www.kaggle.com/datase
    ![Athena Query](r1.png)
 
 
-This pipeline not only processes real-time cryptocurrency data but also leverages machine learning to predict market trends and provide valuable insights.
+This pipeline also leverages machine learning to predict market trends and provide valuable insights.
