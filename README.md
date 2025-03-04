@@ -38,7 +38,7 @@ Sample Dataset: [Cryptocurrency Historical Prices](https://www.kaggle.com/datase
   **AWS Athena Query:**
   
    Daily Price Volatility Analysis
-  --
+  
    ![Athena Query](q1.png)
    ![Athena Query](r1.png)
 
