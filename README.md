@@ -35,4 +35,10 @@ Sample Dataset: [Cryptocurrency Historical Prices](https://www.kaggle.com/datase
 - **CNN-RNN**: Combined Convolutional Neural Networks and Recurrent Neural Networks for sequential data analysis and market trend forecasting.
 - **XGBoost**: A gradient boosting algorithm used for predictive analysis, applied to the processed cryptocurrency data for price predictions.
 
+  ### 1. **AWS Athena Query:**
+   Daily Price Volatility Analysis
+   ![Athena Query](q1.png)
+   ![Athena Query](r1.png)
+
+
 This pipeline not only processes real-time cryptocurrency data but also leverages machine learning to predict market trends and provide valuable insights.
