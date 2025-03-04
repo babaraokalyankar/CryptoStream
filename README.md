@@ -36,8 +36,9 @@ Sample Dataset: [Cryptocurrency Historical Prices](https://www.kaggle.com/datase
 - **XGBoost**: A gradient boosting algorithm used for predictive analysis, applied to the processed cryptocurrency data for price predictions.
 
   **AWS Athena Query:**
+  
    Daily Price Volatility Analysis
-  -
+  --
    ![Athena Query](q1.png)
    ![Athena Query](r1.png)
 
