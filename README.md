@@ -49,4 +49,3 @@ Sample Dataset: [Cryptocurrency Historical Prices](https://www.kaggle.com/datase
   ![XGBoost Model](pyspark.png)
 
 
-This pipeline also leverages machine learning to predict market trends and provide valuable insights.
