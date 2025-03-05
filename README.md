@@ -4,7 +4,6 @@
 This project demonstrates an **End-To-End Data Engineering Pipeline** for processing real-time cryptocurrency market data using **Apache Kafka**, **AWS Cloud Services**, and modern data tools. The pipeline ingests live cryptocurrency prices, processes streams, stores data in a data lake, enables SQL analytics, and incorporates machine learning models for market trend predictions and incorporates machine learning models for market trend predictions.It integrates two ML models:
 
 CNN-RNN: For real-time market trend forecasting.
-
 XGBoost: For predicting cryptocurrency prices using large-scale data. 
 
 ## Technology Stack
