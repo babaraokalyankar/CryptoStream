@@ -1,0 +1,49 @@
+# 1. Create a Snowflake Storage Integration for AWS S3
+CREATE STORAGE INTEGRATION my_s3_integration
+  TYPE = EXTERNAL_STAGE
+  STORAGE_PROVIDER = S3
+  ENABLED = TRUE
+  STORAGE_AWS_ROLE_ARN = 'arn:aws:iam::ACCOUNT_ID:role/SNOWFLAKE_ROLE'
+  STORAGE_ALLOWED_LOCATIONS = ('s3://your-bucket-name/');
+
+# 2. Create an External Stage in Snowflake for AWS S3
+CREATE STAGE my_s3_stage
+  URL = 's3://your-bucket-name/data-folder/'
+  STORAGE_INTEGRATION = my_s3_integration
+  FILE_FORMAT = (TYPE = 'CSV' FIELD_OPTIONALLY_ENCLOSED_BY = '"');
+
+# 3. Create a Snowflake Table to Store the Processed Data
+CREATE TABLE crypto_prices (
+  currency STRING,
+  price FLOAT,
+  timestamp TIMESTAMP
+);
+
+# 4. Copy Data from S3 into Snowflake Table
+COPY INTO crypto_prices
+  FROM @my_s3_stage
+  FILES = ('datafile1.csv', 'datafile2.csv')
+  ON_ERROR = 'CONTINUE';
+
+
+#  Create a Snowflake Stream for Real-Time Data Tracking (Optional)
+CREATE OR REPLACE STREAM crypto_prices_stream
+  ON TABLE crypto_prices
+  SHOW_INITIAL_ROWS = TRUE;
+
+# Query Data from the Stream (Real-Time Processing)
+SELECT * FROM crypto_prices_stream;
+
+#Create a Snowflake Task to Automate Data Processing (Optional)
+CREATE OR REPLACE TASK process_crypto_data_task
+  WAREHOUSE = my_warehouse
+  SCHEDULE = 'USING CRON 0 * * * *'
+  AS
+    -- Example of data transformation logic
+    INSERT INTO crypto_prices_transformed (currency, price, timestamp)
+    SELECT currency, price * 1.05, timestamp
+    FROM crypto_prices
+    WHERE timestamp > CURRENT_DATE - INTERVAL '1 HOUR';
+
+# Monitor and Manage Snowflake Jobs
+SHOW TASKS;
