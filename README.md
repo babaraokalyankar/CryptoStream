@@ -46,7 +46,7 @@ Sample Dataset: [Cryptocurrency Historical Prices](https://www.kaggle.com/datase
 - **RNN**:  Recurrent Neural Networks used for sequential data analysis and market trend forecasting.
 - **XGBoost**: A gradient boosting algorithm used for predictive analysis, applied to the processed cryptocurrency data for price predictions.
   
-**CNN-RNN Model**
+**RNN Model**
   ![RNN Model](cryptoRNN.png)
 
 **XGBoost Model Using Pyspark**
