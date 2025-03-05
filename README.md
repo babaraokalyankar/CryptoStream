@@ -3,7 +3,7 @@
 ## Introduction
 This project demonstrates an **End-To-End Data Engineering Pipeline** for processing real-time cryptocurrency market data using **Apache Kafka**, **AWS Cloud Services**, and modern data tools. The pipeline ingests live cryptocurrency prices, processes streams, stores data in a data lake, enables SQL analytics, and incorporates machine learning models for market trend predictions and incorporates machine learning models for market trend predictions.It integrates two ML models:
 
-CNN-RNN: For real-time market trend forecasting.
+RNN: For market trend forecasting.
 
 XGBoost: For predicting cryptocurrency prices using large-scale data. 
 
@@ -17,7 +17,7 @@ XGBoost: For predicting cryptocurrency prices using large-scale data.
   - Athena (SQL Analytics)
   - IAM (Security Configuration)
 - **Machine Learning**:
-  - CNN-RNN Models and XGBoost with **PySpark** on AWS for cryptocurrency price predictions
+  - RNN Model and XGBoost with **PySpark** on AWS for cryptocurrency price predictions
 - **Data Tools**: Pandas, AWS CLI, Kafka-Python
 
 ## Dataset
@@ -43,11 +43,11 @@ Sample Dataset: [Cryptocurrency Historical Prices](https://www.kaggle.com/datase
    ![Athena Query](r1.png)
 
 ## Machine Learning Models
-- **CNN-RNN**: Combined Convolutional Neural Networks and Recurrent Neural Networks for sequential data analysis and market trend forecasting.
+- **RNN**:  Recurrent Neural Networks used for sequential data analysis and market trend forecasting.
 - **XGBoost**: A gradient boosting algorithm used for predictive analysis, applied to the processed cryptocurrency data for price predictions.
   
 **CNN-RNN Model**
-  ![CNN-RNN Model](cnn-rnn.png)
+  ![RNN Model](cryptoRNN.png)
 
 **XGBoost Model Using Pyspark**
   ![XGBoost Model](pyspark.png)
