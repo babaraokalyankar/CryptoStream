@@ -1,0 +1,31 @@
+# 1. Set up AWS S3 Connection in Snowflake
+CREATE STORAGE INTEGRATION my_s3_integration
+  TYPE = EXTERNAL_STAGE
+  STORAGE_PROVIDER = S3
+  ENABLED = TRUE
+  STORAGE_AWS_ROLE_ARN = 'arn of yours snowflake iam role'
+  STORAGE_ALLOWED_LOCATIONS = ('s3 bucket full address where data is stored');
+
+# 2. Create a Stage in Snowflake for AWS S3 Data
+CREATE STAGE my_s3_stage
+  URL = 'folder within s3 bucket full address where data is stored'
+  STORAGE_INTEGRATION = my_s3_integration
+  FILE_FORMAT = (TYPE = 'CSV' FIELD_OPTIONALLY_ENCLOSED_BY = '"');
+
+# 3. Create a Table in Snowflake to Store Data
+CREATE TABLE crypto_prices (
+  currency STRING,            
+  price NUMBER(18, 8),        
+  volume NUMBER(18, 2),     )
+  market_cap NUMBER(18, 2),  
+  timestamp TIMESTAMP_LTZ   
+);
+
+# 4. Load Data from S3 into Snowflake
+COPY INTO crypto_prices
+  FROM @my_s3_stage
+  FILES = ('datafile1.csv', 'datafile2.csv')  -- Specify the names of files to load
+  ON_ERROR = 'CONTINUE';  -- Skip any files with errors
+
+# 5. Get Query Data from the Table
+SELECT * FROM crypto_prices_stream;
