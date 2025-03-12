@@ -7,7 +7,7 @@ RNN: For market trend forecasting.
 
 XGBoost: For predicting cryptocurrency prices using large-scale data. 
 
-**Architecture Digram :**
+## Architecture Digram :
 ![Architecture](ArchitectureDigram.jpg)
 
 
