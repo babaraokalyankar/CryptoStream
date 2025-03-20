@@ -35,4 +35,4 @@ def send_to_kafka(file):
 for file in files:
     send_to_kafka(file)
 
-producer.flush() #ensuares no data left behind
+producer.flush() # ensure no data left behind
