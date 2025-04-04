@@ -51,6 +51,6 @@ Sample Dataset: [Cryptocurrency Historical Prices](https://www.kaggle.com/datase
   ![RNN Model](cryptoRNN.png)
 
 **XGBoost Model Using Pyspark**
-  ![XGBoost Model](pyspark.png)
+  ![XGBoost Model](Pyspark.PNG)
 
 
